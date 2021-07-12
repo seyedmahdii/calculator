@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root {
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --light-shadow: 0 5px 15px rgba(100, 100, 100, 0.1);
+    --dark-shadow: 0 5px 15px rgba(100, 100, 100, 0.2);
+    --radius: 0.8rem;
+    --transition: all 0.3s ease-out;
+    --linear-transition: all 0.05s linear;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--ff-secondary);
+    background: linear-gradient(315deg, #55ad5f 0%, #3a5846 74%);
+
+    min-height: 100vh;
+    color: white;
+}
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+}
+.container {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.content {
+    background-color: #1f1f1f;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: var(--dark-shadow);
+}
+.input-container {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    background-color: transparent;
+    color: white;
+    text-align: right;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.input {
+    -moz-appearance: textfield;
+}
+
+.keyboard {
+    width: 100%;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 85px;
+    height: 75px;
+    background-color: hsl(0deg, 0%, 15%);
+    border: 1px solid hsl(0deg, 0%, 21%);
+    border-radius: 1.2rem;
+    transition: var(--linear-transition);
+    color: hsl(0deg, 0%, 98%);
+    box-shadow: var(--light-shadow);
+}
+.btn:hover {
+    background-color: rgb(31, 31, 31);
+}
+.btn:active {
+    background-color: rgb(31, 31, 31);
+    transform: translateY(2px);
+    box-shadow: var(--dark-shadow);
+}
+.btn-colored {
+    color: hsl(88deg, 56%, 60%);
+}
+.btn-fill {
+    background-color: hsl(90deg, 94%, 25%);
+}
+.btn-fill:hover {
+    background-color: rgb(54, 105, 2);
+}
+.btn-clear {
+    color: hsl(11deg 74% 60%);
+}
