@@ -67,13 +67,6 @@ button {
     color: white;
     text-align: right;
 }
-.input::-webkit-outer-spin-button,
-.input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-.input {
-    -moz-appearance: textfield;
-}
 
 .keyboard {
     width: 100%;
@@ -110,6 +103,7 @@ button {
 }
 .btn-fill {
     background-color: hsl(90deg, 94%, 25%);
+    border-color: hsl(90deg, 94%, 25%);
 }
 .btn-fill:hover {
     background-color: rgb(54, 105, 2);
