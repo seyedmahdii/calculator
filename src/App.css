@@ -20,9 +20,10 @@
 body {
     font-family: var(--ff-secondary);
     background: linear-gradient(315deg, #55ad5f 0%, #3a5846 74%);
-
     min-height: 100vh;
     color: white;
+    display: grid;
+    place-items: center;
 }
 button {
     border: none;

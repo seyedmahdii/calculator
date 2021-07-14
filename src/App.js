@@ -19,6 +19,9 @@ function App() {
         } else if (operator === "add") {
             data = result.split("+");
             setResult(Number(data[0]) + Number(data[1]));
+        } else if (operator === "perc") {
+            data = result.split("%");
+            setResult((Number(data[0]) * Number(data[1])) / 100);
         }
         setOperator("");
     };
@@ -40,6 +43,10 @@ function App() {
             operator
                 ? setResult(replaceAt(result, result.length - 1, "+"))
                 : setResult(result + "+");
+        } else if (optr === "perc") {
+            operator
+                ? setResult(replaceAt(result, result.length - 1, "%"))
+                : setResult(result + "%");
         }
         setOperator(optr);
     };
@@ -50,6 +57,20 @@ function App() {
             replacement +
             str.substr(index + replacement.length)
         );
+    };
+
+    const handleNeg = () => {
+        if (!result) {
+            setResult("-");
+        } else if (result === "-") {
+            setResult("");
+        } else if (!operator && result && result[0] !== "-") {
+            setResult("-" + result);
+        } else if (!operator && result && result[0] === "-") {
+            setResult(result.replace("-", ""));
+        } else if (operator) {
+            setResult(replaceAt(result, result.length, "-"));
+        }
     };
 
     return (
@@ -78,7 +99,7 @@ function App() {
                         <button className="btn btn-colored">()</button>
                         <button
                             className="btn btn-colored"
-                            onClick={() => setResult(result + "%")}
+                            onClick={() => handleOperators("perc")}
                         >
                             %
                         </button>
@@ -172,7 +193,9 @@ function App() {
                     </div>
 
                     <div className="row">
-                        <button className="btn">+/-</button>
+                        <button className="btn" onClick={() => handleNeg()}>
+                            +/-
+                        </button>
                         <button
                             className="btn"
                             onClick={() => setResult(result + 0)}
